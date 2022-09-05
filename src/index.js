@@ -21,15 +21,13 @@ let menu;
 let contact;
 let footer;
 const headerBuild = () => {
+  document.body.innerHTML = ``;
   document.body.insertAdjacentHTML(`afterbegin`, headerHtml);
   menuSelection();
   headerActions();
 };
 const footerBuild = () => {
   document.body.insertAdjacentHTML(`beforeend`, footerHtml);
-};
-const clearBuild = () => {
-  document.body.innerHTML = ``;
 };
 
 const menuSelection = () => {
@@ -39,21 +37,17 @@ const menuSelection = () => {
   footer = document.querySelector(`.footer`);
 };
 const buildHome = () => {
-  clearBuild();
   headerBuild();
   document.body.insertAdjacentHTML(`beforeend`, mainHtml);
   footerBuild();
 };
 
 const buildMenu = () => {
-  clearBuild();
   headerBuild();
   document.body.insertAdjacentHTML(`beforeend`, menuHtml);
-
   footerBuild();
 };
 const buildContact = () => {
-  clearBuild();
   headerBuild();
   document.body.insertAdjacentHTML(`beforeend`, contactHtml);
   footerBuild();
