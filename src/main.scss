@@ -1,0 +1,45 @@
+$primary-color: black;
+$secondary-color: white;
+body {
+  margin: 0px;
+}
+button {
+  height: 100px;
+  width: 100px;
+}
+.header {
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 20px;
+}
+.links {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.main {
+  background-image: url(./pizza-image.jpg);
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h1,
+h2 {
+  color: $secondary-color;
+}
+h1 {
+  font-size: 60px;
+}
+.order {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
