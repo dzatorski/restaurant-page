@@ -1,6 +1,14 @@
 import _ from "lodash";
 import "./main.css";
-import { headerHtml, mainHtml, menuHtml } from "./main";
+import {
+  headerHtml,
+  mainHtml,
+  menuHtml,
+  contactHtml,
+  footerHtml,
+} from "./main";
+import icon from "./images/github.png";
+import uber from "./images/uber-eats-logo.png";
 // function headerComponent() {
 //   const element = document.createElement(`div`);
 //   element.classList = `header`;
@@ -11,47 +19,55 @@ import { headerHtml, mainHtml, menuHtml } from "./main";
 let main;
 let menu;
 let contact;
+let footer;
+const headerBuild = () => {
+  document.body.insertAdjacentHTML(`afterbegin`, headerHtml);
+  menuSelection();
+  headerActions();
+};
+const footerBuild = () => {
+  document.body.insertAdjacentHTML(`beforeend`, footerHtml);
+};
+const clearBuild = () => {
+  document.body.innerHTML = ``;
+};
+
 const menuSelection = () => {
   main = document.querySelector(`.home`);
   menu = document.querySelector(`.menu`);
   contact = document.querySelector(`.contact`);
+  footer = document.querySelector(`.footer`);
 };
 const buildHome = () => {
-  document.body.innerHTML = ``;
-  document.body.insertAdjacentHTML(`afterbegin`, headerHtml);
+  clearBuild();
+  headerBuild();
   document.body.insertAdjacentHTML(`beforeend`, mainHtml);
+  footerBuild();
 };
 
 const buildMenu = () => {
-  document.body.innerHTML = ``;
-  document.body.insertAdjacentHTML(`afterbegin`, headerHtml);
+  clearBuild();
+  headerBuild();
   document.body.insertAdjacentHTML(`beforeend`, menuHtml);
-  menuSelection();
-  headerActions();
+
+  footerBuild();
 };
 const buildContact = () => {
-  document.body.innerHTML = ``;
-  document.body.insertAdjacentHTML(`afterbegin`, headerHtml);
-  document.body.insertAdjacentHTML(`beforeend`, menuHtml);
-  menuSelection();
-  headerActions();
+  clearBuild();
+  headerBuild();
+  document.body.insertAdjacentHTML(`beforeend`, contactHtml);
+  footerBuild();
 };
 
 const headerActions = () => {
   main.addEventListener(`click`, () => {
-    buildMain();
+    buildHome();
   });
   menu.addEventListener(`click`, () => {
     buildMenu();
   });
   contact.addEventListener(`click`, () => {
-    buildMain();
+    buildContact();
   });
 };
-
-const buildMain = () => {
-  buildHome();
-  menuSelection();
-  headerActions();
-};
-buildMain();
+buildHome();

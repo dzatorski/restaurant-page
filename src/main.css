@@ -1,5 +1,10 @@
 body {
   margin: 0px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #eeeeee;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 button {
@@ -10,11 +15,10 @@ button {
 .header {
   font-size: 1.5rem;
   font-weight: 500;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
+  height: 5%;
   padding: 20px;
 }
 
@@ -22,6 +26,12 @@ button {
   display: flex;
   flex-direction: row;
   gap: 20px;
+}
+
+.home:hover,
+.menu:hover,
+.contact:hover {
+  color: white;
 }
 
 .main {
@@ -37,14 +47,97 @@ button {
 h1,
 h2 {
   color: white;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
 }
 
 h1 {
   font-size: 60px;
 }
 
+.menu-site {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menu-text {
+  font-size: 3rem;
+  margin-bottom: 70px;
+  font-weight: 900;
+}
+
 .order {
   display: flex;
   justify-content: center;
   margin-top: 50px;
+}
+
+.main-dishes,
+.drinks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.pinsas {
+  height: 100px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.text-dish {
+  font-size: 1.1rem;
+  font-weight: 900;
+  border-bottom: 1px solid;
+}
+
+.drink {
+  height: 20px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.text-drink {
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.main-dish-text,
+.drink-text {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.phone-number,
+.e-mail {
+  color: black;
 }/*# sourceMappingURL=main.css.map */

@@ -45,6 +45,18 @@ module.exports = {
         test: /\.xml$/i,
         use: ["xml-loader"],
       },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader",
+            options: {
+              // THIS will resolve relative URLs to reference from the app/ directory
+              root: path.resolve(__dirname, "src"),
+            },
+          },
+        ],
+      },
     ],
   },
 };
